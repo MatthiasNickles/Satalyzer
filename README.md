@@ -5,7 +5,7 @@ Satalyzer is written in Scala and runs on the Java VM (version 8 or higher).
 
 It is not a general purpose logging or log analytics tool, it is mainly meant for solver debugging and benchmarking purposes.
 
-###### Usage
+##### Usage
   
 `java -jar satalyzer.jar <path to directory with event log files>`
 
@@ -17,7 +17,7 @@ one or multiple entries there to see a graph depicting the event values.
 
 ![Dashboard](images/satalyzer_img2.png?raw=true)
 
-###### Event log files
+##### Event log files
 
 Satalyzer reads JSON files consisting of event lists.
 
@@ -41,7 +41,7 @@ Event grouping happens automatically. If a group of events is selected in the up
 a graph visualization of the grouped event values is shown in the upper right pane.
 It is also possible to select multiple groups, to compare their graphs.
 
-###### Generating event log files in your own solver
+##### Generating event log files in your own solver
 
 To let your solver generate Satalyzer log files, you currentl need to include source code file `SatalyzerUse.scala`
 into your solver project. (Currently, this short file is available only in Scala code, but translating it
@@ -51,11 +51,10 @@ Modify line `import [...].stats` as explained in SatalyzerUse.scala.
   
 Initialize the logger by assigning variable `stats` a value and calling `initializeStatsFile()`.  
 E.g.,  
-` stats = new Stats(problemFile = "eventLog.json")  // various other parameters exist, see method 
-  stats.initializeStatsFile() `
+` stats = new Stats(problemFile = "eventLog.json")  // various other parameters exist, see method stats.initializeStatsFile() `
   
 To emit an event, use `stats.writeEntry()`. Examples:  
-` stats.writeEntry(key = "numberUnassigned", value = noOfUnassignedVars, solverThreadNo = 5)
+` stats.writeEntry(key = "numberUnassigned", value = noOfUnassignedVars, solverThreadNo = 5)  
   stats.writeEntry(key = "overallTimeMs", value = timeMs, solverThreadNo = 0) `
 
 To write the collected events to the JSON file, use   
@@ -63,7 +62,7 @@ To write the collected events to the JSON file, use
 
 An existing SAT solver which can generate Satalyzer logs is the probabilistic SAT solver [delSAT](https://github.com/MatthiasNickles/delSAT).
 
-###### Contact
+##### Contact
 
 Author: [Matthias Nickles](https://www.researchgate.net/profile/Matthias_Nickles)
 
@@ -71,18 +70,17 @@ Author: [Matthias Nickles](https://www.researchgate.net/profile/Matthias_Nickles
 
 Feedback and bug reports are welcome!
 
-###### Copyright & License
+##### Copyright & License
 
 Copyright (c) 2020 by Matthias Nickles  
 License: MIT
 
-###### Dependencies
+##### Dependencies
 
-_jsoniter_ (https://jsoniter.com/)
-Copyright (c) 2016 Tao Wen
-License: https://github.com/json-iterator/java/blob/master/LICENSE
+_jsoniter_ (https://jsoniter.com/)  
+Copyright (c) 2016 Tao Wen  
+License: https://github.com/json-iterator/java/blob/master/LICENSE  
 
-_EvilPlot_ (https://cibotech.github.io/evilplot/)
-Copyright (c) 2018 CiBO Technologies, Inc.
+_EvilPlot_ (https://cibotech.github.io/evilplot/)  
+Copyright (c) 2018 CiBO Technologies, Inc.  
 License: https://github.com/cibotech/evilplot/blob/master/LICENSE
-______
