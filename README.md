@@ -15,7 +15,7 @@ On the dashboard, select one or more event log files in the upper left section.
 Events (singleton or grouped) appear in the upper middle pane. Select
 one or multiple entries there to see a graph depicting the event values. 
 
-![Dashboard](satalyzer_img2.jpg?raw=true "Dashboard")
+![Dashboard](images/satalyzer_img2.jpg?raw=true "Dashboard")
 
 ###### Event log files
 
@@ -49,18 +49,18 @@ to Java shouldn't be too difficult.)
 
 Modify line `import [...].stats` as explained in SatalyzerUse.scala.
   
-Initialize the logger by assigning variable `stats` a value and calling `initializeStatsFile()`. 
-E.g.,
+Initialize the logger by assigning variable `stats` a value and calling `initializeStatsFile()`.  
+E.g.,  
 `   stats = new Stats(problemFile = "eventLog.json")  // various other parameters exist, see method 
     stats.initializeStatsFile()`
  
-To emit an event, use `stats.writeEntry()`. Examples:
+To emit an event, use `stats.writeEntry()`. Examples:  
 `   
     stats.writeEntry(key = "numberUnassigned", value = noOfUnassignedVars, solverThreadNo = 5)`
     
     stats.writeEntry(key = "overallTimeMs", value = timeMs, solverThreadNo = 0)`
 
-To write the collected events to the JSON file, use 
+To write the collected events to the JSON file, use   
 	`stats.writeToFile()`
 
 An existing SAT solver which can generate Satalyzer logs is the probabilistic SAT solver [delSAT](https://github.com/MatthiasNickles/delSAT).
