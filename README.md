@@ -3,7 +3,7 @@ as SAT, CP, SMT and Answer Set solvers.
 
 Satalyzer is written in Scala and runs on the Java VM (version 8 or higher).  
 
-It is not a general purpose logging or log analytics tool, it is mainly meant for solver debugging and benchmarking purposes.
+It is not a general purpose logging or log analytics tool, it is mainly meant for solver development, debugging and preliminary benchmarking purposes.
 
 ##### Usage
   
@@ -35,7 +35,7 @@ Multiple events of the same kind can be grouped - this is useful for events whic
 are all instances of the same type and are generated over the course of time of the same
 solver run, such as the number of conflicts or assignments (in DPLL/CDCL-style solvers),
 but also if multiple log files are selected and singleton events in those solver
-runs should be compared with each other, e.g., the overall run times of multiple solver runs (useful for benchmarking).
+runs should be compared with each other, e.g., the overall run times of multiple solver runs (useful for preliminary benchmarking).
 
 Event grouping happens automatically. If a group of events is selected in the upper middle pane,
 a graph visualization of the grouped event values is shown in the upper right pane.
