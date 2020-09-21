@@ -47,11 +47,12 @@ To let your solver generate Satalyzer log files, you currentl need to include so
 into your solver project. (Currently, this short file is available only in Scala code, but translating it
 to Java shouldn't be too difficult.) 
 
-Modify line `import [...].stats` as explained in SatalyzerUse.scala.
+Modify line `import [...].stats` as explained in file `SatalyzerUse.scala`.
   
 Initialize the logger by assigning variable `stats` a value and calling `initializeStatsFile()`.  
 E.g.,  
-` stats = new Stats(problemFile = "eventLog.json")  // various other parameters exist, see method stats.initializeStatsFile() `
+` stats = new Stats(problemFile = "eventLog.json")  // various other parameters exist, see constructor `  
+` initializeStatsFile()  `  
   
 To emit an event, use `stats.writeEntry()`. Examples:  
 ` stats.writeEntry(key = "numberUnassigned", value = noOfUnassignedVars, solverThreadNo = 5)  `  
