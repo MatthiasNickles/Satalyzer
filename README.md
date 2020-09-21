@@ -15,7 +15,7 @@ On the dashboard, select one or more event log files in the upper left section.
 Events (singleton or grouped) appear in the upper middle pane. Select
 one or multiple entries there to see a graph depicting the event values. 
 
-![Dashboard](satalyzer_img2.jpg?raw=true "Dashboard" | width=400)
+![Dashboard](satalyzer_img2.jpg?raw=true "Dashboard")
 
 ###### Event log files
 
