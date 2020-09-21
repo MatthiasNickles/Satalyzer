@@ -1,5 +1,5 @@
 /**
-  Include this file in your Scala solver code to allow writing Satalyzer event logs.
+  Include this file in your Scala solver code to allow writing Satalyzer event logs (JSON).
   Modify line import [...].stats (see below)
   
   Initialize the logger by assigning 'stats' a value and calling initializeStatsFile. E.g.,
@@ -37,8 +37,8 @@ import utils.Various._
 // For visualization of the serialized runtime statistics events, use Satalyzer (separate project)
 
 final case class StatsEntry( // Any modification of this class (e.g., new fields or field names) need to be reflected in the
-                             // deserialization method further below (can't be don't automatically).
-                             // Also, of course, class StatsEntry needs to be identical with StatsEntry in project RuntimeStats/StatsVisualizer.
+                             // deserialization method also (can't be don't automatically).
+                             // Also, of course, class StatsEntry needs to be identical with StatsEntry in project Satalyzer/StatsVisualizer.
 
                              messageTimeStamp: Long = -1l, // in nano secs from program start (not to be used as a unique entry or message key)
 
@@ -55,8 +55,8 @@ final case class StatsEntry( // Any modification of this class (e.g., new fields
 }
 
 final case class Stats( // Any modification of this class (e.g., new fields or field names) need to be reflected in the
-                        // deserialization method further below (can't be don't automatically).
-                        // Also, of course, class Stats needs to be identical with Stats in project RuntimeStats/StatsVisualizer.
+                        // deserialization method also (can't be don't automatically).
+                        // Also, of course, class Stats needs to be identical with Stats in project Satalyzer/StatsVisualizer.
 
                         problemFile: String,
 
