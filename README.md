@@ -15,7 +15,7 @@ On the dashboard, select one or more event log files in the upper left section.
 Events (singleton or grouped) appear in the upper middle pane. Select
 one or multiple entries there to see a graph depicting the event values. 
 
-![Dashboard](images/satalyzer_img2.jpg)
+![Dashboard](/images/satalyzer_img2.jpg)
 
 ###### Event log files
 
@@ -56,9 +56,10 @@ E.g.,
  
 To emit an event, use `stats.writeEntry()`. Examples:  
 `   
-    stats.writeEntry(key = "numberUnassigned", value = noOfUnassignedVars, solverThreadNo = 5)`
+    stats.writeEntry(key = "numberUnassigned", value = noOfUnassignedVars, solverThreadNo = 5)
     
-    stats.writeEntry(key = "overallTimeMs", value = timeMs, solverThreadNo = 0)`
+    stats.writeEntry(key = "overallTimeMs", value = timeMs, solverThreadNo = 0)
+ `
 
 To write the collected events to the JSON file, use   
 	`stats.writeToFile()`
