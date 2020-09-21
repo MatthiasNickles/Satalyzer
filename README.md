@@ -35,7 +35,7 @@ Multiple events of the same kind can be grouped - this is useful for events whic
 are all instances of the same type and are generated over the course of time of the same
 solver run, such as the number of conflicts or assignments (in DPLL/CDCL-style solvers),
 but also if multiple log files are selected and singleton events in those solver
-runs should be compared with each other, e.g., the overall run times of give solver runs (useful for benchmarking).
+runs should be compared with each other, e.g., the overall run times of multiple solver runs (useful for benchmarking).
 
 Event grouping happens automatically. If a group of events is selected in the upper middle pane,
 a graph visualization of the grouped event values is shown in the upper right pane.
@@ -44,14 +44,15 @@ It is also possible to select multiple groups, to compare their graphs.
 ##### Generating event log files in your own solver
 
 To let your solver generate Satalyzer log files, you currently need to include source code file `SatalyzerUse.scala`
-into your solver project. (Currently, this short file is available only in Scala code, but translating it
-to Java shouldn't be too difficult.) 
+into your solver project. (Currently, this very short file is available only in Scala code, but translating it
+to, e.g., Java, Kotlin or Clojure shouldn't be difficult.) 
 
-Modify line `import [...].stats` as explained in file `SatalyzerUse.scala`.
+Modify line `import [...].stats` as explained in file `SatalyzerUse.scala` (this is just
+to bring into scope the main data structure (assumed to be in variable `stats`) for collecting Satalyzer log messages in your code).
   
-Initialize the logger by assigning variable `stats` a value and calling `initializeStatsFile()`.  
+In your own code, initialize the logger by assigning variable `stats` a value and calling `initializeStatsFile()`.  
 E.g.,  
-` stats = new Stats(problemFile = "eventLog.json")  // various other parameters exist, see constructor `  
+` var stats = new Stats(problemFile = "eventLog.json")  // see Stats constructor for further parameters `  
 ` initializeStatsFile()  `  
   
 To emit an event, use `stats.writeEntry()`. Examples:  
@@ -74,7 +75,8 @@ Feedback and bug reports are welcome!
 ##### Copyright & License
 
 Copyright (c) 2020 by Matthias Nickles  
-License: MIT
+
+Licensed under MIT license
 
 ##### Dependencies
 
