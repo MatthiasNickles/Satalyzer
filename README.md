@@ -54,8 +54,8 @@ E.g.,
 ` stats = new Stats(problemFile = "eventLog.json")  // various other parameters exist, see method stats.initializeStatsFile() `
   
 To emit an event, use `stats.writeEntry()`. Examples:  
-` stats.writeEntry(key = "numberUnassigned", value = noOfUnassignedVars, solverThreadNo = 5)  
-  stats.writeEntry(key = "overallTimeMs", value = timeMs, solverThreadNo = 0) `
+` stats.writeEntry(key = "numberUnassigned", value = noOfUnassignedVars, solverThreadNo = 5)  `  
+` stats.writeEntry(key = "overallTimeMs", value = timeMs, solverThreadNo = 0) `
 
 To write the collected events to the JSON file, use   
 	`stats.writeToFile()`
