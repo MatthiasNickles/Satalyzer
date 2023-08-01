@@ -62,7 +62,7 @@ To emit an event, use `stats.writeEntry()`. Examples:
 To write the collected events to the JSON file, use   
 	`stats.writeToFile()`
 
-An existing solver for the Java VM which can generate Satalyzer logs is the Probabilistic Answer Set and SAT solver [delSAT](https://github.com/MatthiasNickles/delSAT).
+An existing solver for the Java VM which can generate Satalyzer logs is the Probabilistic Answer Set Programming and Probabilistic Satisfiability solver [diff-SAT](https://github.com/MatthiasNickles/diff-SAT).
 
 ##### Contact
 
